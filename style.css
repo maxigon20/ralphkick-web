@@ -303,13 +303,15 @@ body.inner {
 .archive-photos--two {
     grid-template-columns: 3fr 2fr;
     max-width: 100%;
+    align-items: stretch;
 }
 
 .archive-photos--two img {
     aspect-ratio: unset !important;
-    height: 280px;
+    height: clamp(140px, 28vw, 280px);
     width: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .archive-photos img {
