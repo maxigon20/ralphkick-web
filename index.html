@@ -1,36 +1,40 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RalphKick</title>
-    <meta name="description" content="RalphKick — not made to stay at home.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RalphKick</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home">
 
-<main class="container">
+<nav class="nav-home">
+    <a href="gargment.html">Gargment</a>
+    <a href="archive.html">Archive</a>
+    <a href="origins.html">Origins</a>
+    <a href="get-outside.html">Get outside</a>
+</nav>
+
+<main class="home-main">
 
     <div class="hero">
-        <img src="bg.jpg" alt="RalphKick Campaign" class="hero-img">
+        <img src="bg.jpg" alt="RalphKick" class="hero-img">
     </div>
 
     <div class="cta-area">
-        <a href="#" id="reveal-link" class="cta-link">Drop your email for the next kick →</a>
-
+        <a href="#" id="reveal-link" class="cta-link">Drop your email for the next kick&nbsp;→</a>
         <form id="signup-form" class="signup hidden">
             <input type="email" id="email" name="email" placeholder="your email" required autocomplete="email">
-            <button type="submit" aria-label="Enviar">→</button>
+            <button type="submit">→</button>
         </form>
-
         <p id="form-message" class="form-message"></p>
     </div>
 
-    <p class="footer-text">Go outside. Wear us soon...</p>
-    <img src="logo.png" alt="RalphKick Seal" class="seal">
+    <p class="footer-text">Go outside. Wear us soon&hellip;</p>
+    <img src="logo.png" alt="RalphKick" class="seal">
 
 </main>
 
