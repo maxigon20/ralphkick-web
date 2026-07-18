@@ -429,7 +429,7 @@ body.inner {
 
 .nav-group {
     display: flex;
-    gap: clamp(16px, 4vw, 40px);
+    gap: clamp(30px, 5vw, 55px); /* Subimos el mínimo a 30px y el máximo a 55px */
 }
 
 .nav-group a {
