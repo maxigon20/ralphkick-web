@@ -683,5 +683,24 @@ body.inner {
 }
 
 @media (max-width: 420px) {
-    .shop-grid { grid-template-columns: 1fr; }
+    .shop-grid { grid-template-columns: repeat(2, 1fr); gap: 12px 8px; }
+    .shop-name { font-size: 10px; letter-spacing: 0; }
+    .shop-price { font-size: 11px; }
+}
+/* ── INDICADORES DE NAVEGACIÓN PRODUCTO ── */
+.product-page::after {
+    content: 'desliza para navegar';
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: 11px;
+    color: var(--light);
+    padding: 40px 0 20px;
+    letter-spacing: 1px;
+}
+
+@media (min-width: 700px) {
+    .product-page::after {
+        content: '← → para navegar entre prendas';
+    }
 }
