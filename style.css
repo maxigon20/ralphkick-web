@@ -447,3 +447,241 @@ body.inner {
     text-decoration: underline;
     text-underline-offset: 4px;
 }
+/* ── SHOP GRID ── */
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 24px;
+    animation: fadeUp 1s ease both;
+}
+
+.shop-item {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+}
+
+.shop-img-wrap {
+    background: #f5f4f2;
+    overflow: hidden;
+}
+
+.shop-img-wrap img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+}
+
+.shop-item:hover .shop-img-wrap img {
+    transform: scale(1.03);
+}
+
+.shop-name {
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: .5px;
+}
+
+.shop-price {
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+.shop-soldout {
+    color: var(--light);
+    font-size: 12px;
+}
+
+/* ── PRODUCT PAGE ── */
+
+.product-page {
+    padding-top: 40px;
+}
+
+.product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    animation: fadeUp 1s ease both;
+}
+
+.product-left { position: sticky; top: 20px; }
+
+.product-main-img {
+    width: 100%;
+    display: block;
+    cursor: zoom-in;
+    background: #f5f4f2;
+}
+
+.product-right {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product-name {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: .5px;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.product-price {
+    font-size: 14px;
+}
+
+.product-soldout-label {
+    color: var(--light);
+    font-size: 13px;
+}
+
+.product-color {
+    font-size: 12px;
+    color: var(--light);
+    letter-spacing: .5px;
+}
+
+.size-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.size-grid span {
+    font-size: 13px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.size-grid span:hover {
+    background: var(--ink);
+    color: #fff;
+}
+
+.size-grid--soldout span {
+    opacity: .4;
+    cursor: default;
+}
+
+.size-grid--soldout span:hover {
+    background: transparent;
+    color: var(--ink);
+}
+
+.dm-btn {
+    display: inline-block;
+    background: #1a6ef5;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.5;
+    transition: opacity .2s;
+    max-width: 260px;
+}
+
+.dm-btn:hover { opacity: .85; }
+
+.dm-btn small {
+    display: block;
+    font-size: 11px;
+    opacity: .85;
+    margin-top: 2px;
+}
+
+.dm-btn--soldout {
+    background: #aaa;
+    cursor: default;
+    pointer-events: none;
+}
+
+.product-specs {
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--ink);
+    letter-spacing: .5px;
+}
+
+.product-lifestyle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.product-lifestyle img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    cursor: zoom-in;
+    transition: opacity .2s;
+}
+
+.product-lifestyle img:hover { opacity: .85; }
+
+/* ── LIGHTBOX ── */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox.active { display: flex; }
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    display: block;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 28px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 36px;
+    cursor: pointer;
+    line-height: 1;
+    opacity: .8;
+    transition: opacity .2s;
+}
+
+.lightbox-close:hover { opacity: 1; }
+
+/* ── RESPONSIVE SHOP ── */
+
+@media (max-width: 700px) {
+    .shop-grid { grid-template-columns: repeat(2, 1fr); gap: 20px 16px; }
+    .product-layout { grid-template-columns: 1fr; }
+    .product-left { position: static; }
+    .dm-btn { max-width: 100%; }
+}
+
+@media (max-width: 420px) {
+    .shop-grid { grid-template-columns: 1fr; }
+}
