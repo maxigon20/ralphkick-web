@@ -14,7 +14,7 @@
 <header class="inner-header">
     <a href="index.html"><img src="logo.png" alt="RalphKick" class="header-logo"></a>
     <nav class="nav-inner">
-        <a href="gargment.html" class="nav-primary active">Gargment</a>
+        <a href="Garment.html" class="nav-primary active">Garment</a>
         <span class="nav-sep">|</span>
         <div class="nav-group">
             <a href="archive.html">Archive</a>
@@ -27,9 +27,13 @@
 <main class="inner-main product-page">
     <div class="product-layout">
 
-        <div class="product-left">
-            <img src="sand-main.jpg" alt="Sand Tee" class="product-main-img lightbox-trigger">
-        </div>
+       <div class="product-left">
+    <div class="product-img-wrap">
+        <button class="product-arrow product-arrow--prev" id="prod-prev">&#8592;</button>
+        <img src="sand-main.jpg" alt="Sand Tee" class="product-main-img" id="product-main-img">
+        <button class="product-arrow product-arrow--next" id="prod-next">&#8594;</button>
+    </div>
+</div>
 
         <div class="product-right">
             <div class="product-info">
@@ -40,15 +44,15 @@
                     <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span><span>XXL</span>
                 </div>
                 <a href="https://ig.me/m/ralphkick_eu" target="_blank" rel="noopener" class="dm-btn dm-btn--soldout">
-                    DM US FOR YOUR GARGMENT ;)
+                    DM US FOR YOUR Garment ;)
                 </a>
                 <p class="product-specs">240 GSM<br>100%COTTON</p>
             </div>
 
             <div class="product-lifestyle">
-                <img src="sand-life1.jpg" alt="" class="lightbox-trigger">
-                <img src="sand-life2.jpg" alt="" class="lightbox-trigger">
-                <img src="sand-life3.jpg" alt="" class="lightbox-trigger">
+                <img src="sand-life1.jpg" alt="">
+                <img src="sand-life2.jpg" alt="">
+                <img src="sand-life3.jpg" alt="">
             </div>
         </div>
 
@@ -58,6 +62,12 @@
 <div class="lightbox" id="lightbox">
     <button class="lightbox-close" id="lightbox-close">×</button>
     <img src="" id="lightbox-img" alt="">
+    <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">×</button>
+    <button class="lightbox-arrow lightbox-arrow--prev" id="lb-prev">&#8592;</button>
+    <img src="" id="lightbox-img" alt="">
+    <button class="lightbox-arrow lightbox-arrow--next" id="lb-next">&#8594;</button>
+</div>
 </div>
 
 <script src="product.js"></script>
