@@ -62,11 +62,7 @@ document.getElementById('lb-next').addEventListener('click', e => { e.stopPropag
 // Teclado
 document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('active')) {
-        const prev = document.body.dataset.prev;
-        const next = document.body.dataset.next;
-        if (e.key === 'ArrowLeft' && prev) window.location.href = prev;
-        if (e.key === 'ArrowRight' && next) window.location.href = next;
-        return;
+        
     }
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowRight') showNext();
@@ -83,18 +79,3 @@ lightbox.addEventListener('touchend', e => {
     else showPrev();
 });
 
-// Swipe en página (entre productos)
-let pageTouchX = 0;
-document.addEventListener('touchstart', e => {
-    if (lightbox.classList.contains('active')) return;
-    pageTouchX = e.changedTouches[0].screenX;
-}, { passive: true });
-document.addEventListener('touchend', e => {
-    if (lightbox.classList.contains('active')) return;
-    const prev = document.body.dataset.prev;
-    const next = document.body.dataset.next;
-    const diff = pageTouchX - e.changedTouches[0].screenX;
-    if (Math.abs(diff) < 60) return;
-    if (diff > 0 && next) window.location.href = next;
-    if (diff < 0 && prev) window.location.href = prev;
-});
