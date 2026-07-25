@@ -69,13 +69,33 @@ document.addEventListener('keydown', e => {
     if (e.key === 'ArrowLeft') showPrev();
 });
 
-// Swipe en lightbox (entre fotos)
+// Swipe en lightbox
 let lbTouchX = 0;
 lightbox.addEventListener('touchstart', e => { lbTouchX = e.changedTouches[0].screenX; }, { passive: true });
 lightbox.addEventListener('touchend', e => {
     const diff = lbTouchX - e.changedTouches[0].screenX;
     if (Math.abs(diff) < 50) return;
     if (diff > 0) showNext();
+    else showPrev();
+});
+
+// Swipe en cualquier punto de la página (entre fotos del producto)
+let pageTouchX = 0;
+let pageTouchY = 0;
+document.addEventListener('touchstart', e => {
+    if (lightbox.classList.contains('active')) return;
+    pageTouchX = e.changedTouches[0].screenX;
+    pageTouchY = e.changedTouches[0].screenY;
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+    if (lightbox.classList.contains('active')) return;
+    const diffX = pageTouchX - e.changedTouches[0].screenX;
+    const diffY = pageTouchY - e.changedTouches[0].screenY;
+    // Solo si es más horizontal que vertical (no confundir con scroll)
+    if (Math.abs(diffX) < 60) return;
+    if (Math.abs(diffY) > Math.abs(diffX)) return;
+    if (diffX > 0) showNext();
     else showPrev();
 });
 
