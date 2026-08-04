@@ -790,3 +790,30 @@ body.inner {
 @media (max-width: 700px) {
     .product-arrow { opacity: .75; padding: 10px 10px; }
 }
+/* ── SOCIAL LINKS ── */
+.social-links {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+    text-decoration: none;
+    font-style: italic;
+    font-size: 14px;
+    transition: opacity .2s;
+}
+
+.social-link:hover { opacity: .5; }
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
