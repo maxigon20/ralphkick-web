@@ -82,8 +82,8 @@ body.home-v2 {
 
 @media (max-width: 600px) {
     .home-v2-main {
-        justify-content: space-between;
-        padding: 50px 20px 40px;
+        justify-content: center;
+        padding: 40px 20px 50px;
         gap: 0;
         height: 100dvh;
         max-height: 100dvh;
@@ -91,12 +91,14 @@ body.home-v2 {
 
     .home-v2-top {
         gap: 10px;
-        padding-top: 20px;
+        padding-top: 0;
+        margin-bottom: auto;
+        margin-top: auto;
     }
 
     .home-brand-img {
         width: min(100px, 26vw);
-        margin-top: 8px;
+        margin-bottom: 4px;
     }
 
     .home-photo {
@@ -110,7 +112,8 @@ body.home-v2 {
     }
 
     .home-v2-bottom {
-        padding-bottom: 10px;
+        margin-top: auto;
+        padding-bottom: 30px;
         gap: 8px;
     }
 }
