@@ -852,7 +852,7 @@ body.home-v2 {
 }
 
 .home-brand-img {
-    width: min(220px, 55vw);
+    width: min(100px, 55vw);
     display: block;
 }
 
