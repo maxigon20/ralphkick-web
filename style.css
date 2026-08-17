@@ -825,7 +825,9 @@ body.inner {
 /* ── HOME V2 ── */
 
 body.home-v2 {
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -837,10 +839,11 @@ body.home-v2 {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
     width: 100%;
     max-width: 520px;
-    padding: 80px 30px 60px;
+    padding: 40px 30px 50px;
     text-align: center;
 }
 
@@ -852,7 +855,7 @@ body.home-v2 {
 }
 
 .home-brand-img {
-    width: min(100px, 55vw);
+    width: min(60px, 30vw);
     display: block;
 }
 
@@ -896,6 +899,10 @@ body.home-v2 {
 
 @media (max-width: 600px) {
     .home-v2-main {
-        padding: 60px 24px 40px;
+        padding: 24px 24px 60px;
+    }
+
+    .home-brand-img {
+        width: min(46px, 24vw);
     }
 }
