@@ -703,3 +703,32 @@ body.inner {
     flex-shrink: 0;
     display: block;
 }
+/* ── BACK TO SHOP ── */
+
+.back-to-shop {
+    display: inline-block;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--light);
+    margin-bottom: 24px;
+    transition: color .2s;
+}
+
+.back-to-shop:hover { color: var(--ink); }
+
+/* ── TALLAS INTERACTIVAS ── */
+
+.size-grid span.selected {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+}
+
+/* ── SOLD OUT MSG ── */
+
+.soldout-msg {
+    font-style: italic;
+    font-size: 13px;
+    color: var(--light);
+    padding: 14px 0;
+}

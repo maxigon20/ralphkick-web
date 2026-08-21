@@ -1,7 +1,7 @@
 // ── IMÁGENES ──
 const mainImg = document.getElementById('product-main-img');
 const lifestyleImgs = Array.from(document.querySelectorAll('.product-lifestyle img'));
-const allSrcs = [mainImg.src, ...lifestyleImgs.map(img => img.src)];
+const allSrcs = [mainImg.getAttribute('src'), ...lifestyleImgs.map(img => img.getAttribute('src'))];
 let currentIndex = 0;
 
 function setMain(index) {
@@ -9,19 +9,27 @@ function setMain(index) {
     mainImg.src = allSrcs[currentIndex];
 }
 
-// Flechas sobre la imagen principal
 document.getElementById('prod-prev').addEventListener('click', e => {
     e.stopPropagation();
     setMain(currentIndex - 1);
 });
+
 document.getElementById('prod-next').addEventListener('click', e => {
     e.stopPropagation();
     setMain(currentIndex + 1);
 });
 
-// Clic en thumbnails de lifestyle
 lifestyleImgs.forEach((img, i) => {
     img.addEventListener('click', () => setMain(i + 1));
+});
+
+// ── TALLAS INTERACTIVAS ──
+const sizeSpans = document.querySelectorAll('.size-grid:not(.size-grid--soldout) span');
+sizeSpans.forEach(span => {
+    span.addEventListener('click', () => {
+        sizeSpans.forEach(s => s.classList.remove('selected'));
+        span.classList.add('selected');
+    });
 });
 
 // ── LIGHTBOX ──
@@ -59,11 +67,8 @@ lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightb
 document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); showPrev(); });
 document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); showNext(); });
 
-// Teclado
 document.addEventListener('keydown', e => {
-    if (!lightbox.classList.contains('active')) {
-        
-    }
+    if (!lightbox.classList.contains('active')) return;
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowRight') showNext();
     if (e.key === 'ArrowLeft') showPrev();
@@ -79,7 +84,7 @@ lightbox.addEventListener('touchend', e => {
     else showPrev();
 });
 
-// Swipe en cualquier punto de la página (entre fotos del producto)
+// Swipe en página (entre fotos del producto)
 let pageTouchX = 0;
 let pageTouchY = 0;
 document.addEventListener('touchstart', e => {
@@ -92,10 +97,8 @@ document.addEventListener('touchend', e => {
     if (lightbox.classList.contains('active')) return;
     const diffX = pageTouchX - e.changedTouches[0].screenX;
     const diffY = pageTouchY - e.changedTouches[0].screenY;
-    // Solo si es más horizontal que vertical (no confundir con scroll)
     if (Math.abs(diffX) < 60) return;
     if (Math.abs(diffY) > Math.abs(diffX)) return;
     if (diffX > 0) showNext();
     else showPrev();
 });
-
